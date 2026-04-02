@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Политика конфиденциальности — Аппарат Союз-Аполлон</title>
+  <meta name="description" content="Политика конфиденциальности информационного сайта об аппарате Союз-Аполлон. Порядок обработки и защиты персональных данных." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://soyuz-apollon-info.ru/privacy.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --blue-dark:  #0d2c5e;
+      --blue-mid:   #1a4fa0;
+      --blue-light: #2e79d9;
+      --blue-pale:  #e8f1fb;
+      --blue-ultra: #f0f6ff;
+      --white:      #ffffff;
+      --text-main:  #1a1e2e;
+      --text-muted: #5a6580;
+      --border:     #d0dff5;
+      --shadow-sm:  0 2px 12px rgba(13,44,94,.08);
+      --radius:     12px;
+      --radius-lg:  20px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: var(--text-main);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    a { color: var(--blue-light); text-decoration: underline; }
+    a:hover { color: var(--blue-dark); }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 20px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, var(--blue-mid), var(--blue-light));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2; }
+    .logo-name { font-size: 1rem; font-weight: 800; color: var(--blue-dark); line-height: 1.2; }
+    .logo-sub  { font-size: .67rem; color: var(--text-muted); letter-spacing: .04em; }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--blue-pale);
+      color: var(--blue-mid);
+      border: none;
+      border-radius: 8px;
+      padding: 9px 18px;
+      font-family: 'Raleway', sans-serif;
+      font-size: .86rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .back-btn:hover { background: var(--border); color: var(--blue-dark); }
+    .back-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ── HERO STRIP ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, #1a3a6e 100%);
+      color: #fff;
+      padding: 52px 0 44px;
+    }
+    .page-hero .breadcrumb {
+      font-size: .78rem;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .page-hero .breadcrumb a { color: rgba(255,255,255,.65); text-decoration: none; }
+    .page-hero .breadcrumb a:hover { color: #fff; }
+    .page-hero .breadcrumb span { color: rgba(255,255,255,.35); }
+    .page-hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .page-hero .meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: .82rem;
+      color: rgba(255,255,255,.6);
+    }
+    .page-hero .meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .page-hero .meta svg { width: 14px; height: 14px; stroke: rgba(255,255,255,.5); fill: none; stroke-width: 2; }
+
+    /* ── CONTENT ── */
+    .policy-wrap {
+      padding: 56px 0 80px;
+    }
+
+    /* Table of contents */
+    .toc {
+      background: var(--blue-ultra);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .toc h2 {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+      margin-bottom: 14px;
+    }
+    .toc ol {
+      padding-left: 18px;
+      counter-reset: toc;
+      list-style: none;
+    }
+    .toc li {
+      counter-increment: toc;
+      margin-bottom: 6px;
+    }
+    .toc li::before {
+      content: counter(toc) ". ";
+      color: var(--blue-mid);
+      font-weight: 700;
+      font-size: .84rem;
+    }
+    .toc a {
+      font-size: .84rem;
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .toc a:hover { color: var(--blue-mid); text-decoration: underline; }
+
+    /* Sections */
+    .policy-section {
+      margin-bottom: 40px;
+      scroll-margin-top: 90px;
+    }
+    .policy-section h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--blue-pale);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue-mid));
+      color: #fff;
+      border-radius: 7px;
+      font-size: .8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .policy-section p {
+      font-size: .92rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section ul, .policy-section ol {
+      padding-left: 20px;
+      margin: 10px 0 14px;
+    }
+    .policy-section li {
+      font-size: .92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 6px;
+    }
+    .policy-section strong { color: var(--text-main); }
+
+    /* Highlight box */
+    .highlight-box {
+      background: var(--blue-ultra);
+      border-left: 3px solid var(--blue-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .highlight-box strong { color: var(--blue-dark); }
+
+    /* Contact card */
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-sm);
+      margin-top: 16px;
+    }
+    .contact-card h3 {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+      margin-bottom: 14px;
+    }
+    .contact-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 8px;
+      font-size: .88rem;
+    }
+    .contact-row:last-child { margin-bottom: 0; }
+    .contact-label {
+      color: var(--text-muted);
+      min-width: 80px;
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+    .contact-value { color: var(--text-main); font-weight: 500; }
+    .contact-value a { color: var(--blue-light); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,.6);
+      padding: 32px 0;
+      font-size: .82rem;
+      text-align: center;
+    }
+    .site-footer a { color: rgba(255,255,255,.7); }
+    .site-footer strong { color: rgba(255,255,255,.9); }
+
+    /* ── TOP SCROLL BUTTON ── */
+    .scroll-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px; height: 44px;
+      background: var(--blue-mid);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(13,44,94,.25);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s, transform .25s;
+      z-index: 500;
+    }
+    .scroll-top.visible { opacity: 1; pointer-events: all; }
+    .scroll-top:hover { transform: translateY(-2px); background: var(--blue-dark); }
+    .scroll-top svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    @media (max-width: 640px) {
+      .page-hero { padding: 36px 0 30px; }
+      .policy-wrap { padding: 36px 0 60px; }
+      .toc { padding: 18px 20px; }
+      .contact-card { padding: 18px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="На главную — Союз-Аполлон">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <div class="logo-name">Союз-Аполлон</div>
+          <div class="logo-sub">Медицинское изделие</div>
+        </div>
+      </a>
+      <a href="index.html" class="back-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        На главную
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Навигация">
+      <a href="index.html">Главная</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">Политика конфиденциальности</span>
+    </nav>
+    <h1>Политика конфиденциальности</h1>
+    <div class="meta">
+      <span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Последнее обновление: 2025 г.
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Действует в соответствии с ФЗ-152
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<main class="policy-wrap">
+  <div class="container">
+
+    <!-- Table of Contents -->
+    <nav class="toc" aria-label="Содержание">
+      <h2>Содержание</h2>
+      <ol>
+        <li><a href="#s1">Общие положения</a></li>
+        <li><a href="#s2">Какие данные мы собираем</a></li>
+        <li><a href="#s3">Передача данных партнёрской программе</a></li>
+        <li><a href="#s4">Цели обработки персональных данных</a></li>
+        <li><a href="#s5">Правовые основания обработки</a></li>
+        <li><a href="#s6">Сроки хранения данных</a></li>
+        <li><a href="#s7">Права пользователя</a></li>
+        <li><a href="#s8">Файлы cookie</a></li>
+        <li><a href="#s9">Безопасность данных</a></li>
+        <li><a href="#s10">Изменения политики</a></li>
+        <li><a href="#s11">Применимое законодательство</a></li>
+        <li><a href="#s12">Контактная информация</a></li>
+      </ol>
+    </nav>
+
+    <!-- Section 1 -->
+    <section class="policy-section" id="s1">
+      <h2><span class="section-num">1</span>Общие положения</h2>
+      <p>Настоящая Политика конфиденциальности (далее — «Политика») определяет порядок сбора, хранения, обработки и защиты персональных данных пользователей (далее — «Пользователи» или «вы») информационного сайта об аппарате «Союз-Аполлон» (далее — «Сайт»).</p>
+      <p>Ответственным за обработку персональных данных на Сайте является <strong>«Международный центр здоровья»</strong> (ИНН 7713480994, КПП 771301001, ОГРН 1217700093159), 127287, г. Москва, Петровско-Разумовский проезд, д. 29 стр. 4, эт. 1, пом. I, ком. 28 (далее — «Оператор»).</p>
+      <p>Оставляя заявку через форму обратной связи на Сайте, а также продолжая использовать Сайт, Пользователь выражает согласие с условиями настоящей Политики в полном объёме. Если вы не согласны с условиями Политики, пожалуйста, прекратите использование Сайта.</p>
+      <div class="highlight-box">
+        <strong>Обратите внимание:</strong> данный Сайт является информационным ресурсом об аппарате «Союз-Аполлон» и не осуществляет дистанционную продажу медицинских изделий. Форма обратной связи предназначена исключительно для получения консультации по вопросам устройства и применения аппарата.
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="policy-section" id="s2">
+      <h2><span class="section-num">2</span>Какие данные мы собираем</h2>
+      <p>При заполнении формы обратной связи (консультации) на Сайте могут быть собраны следующие персональные данные:</p>
+      <ul>
+        <li><strong>Имя</strong> — для обращения к Пользователю;</li>
+        <li><strong>Номер телефона</strong> — для связи с Пользователем в целях предоставления консультации;</li>
+        <li><strong>Адрес электронной почты</strong> — если указан Пользователем самостоятельно;</li>
+        <li><strong>Иные данные</strong>, которые Пользователь по собственному усмотрению указал в поле сообщения формы.</li>
+      </ul>
+      <p>Помимо данных, которые Пользователь вводит самостоятельно, Сайт в автоматическом режиме может собирать следующие технические сведения:</p>
+      <ul>
+        <li>IP-адрес устройства;</li>
+        <li>тип и версия браузера;</li>
+        <li>тип и версия операционной системы;</li>
+        <li>страницы Сайта, посещённые Пользователем, и время посещения;</li>
+        <li>источник перехода на Сайт (реферер).</li>
+      </ul>
+      <p>Технические данные собираются в обезличенном виде исключительно в целях аналитики и улучшения работы Сайта. Они не позволяют идентифицировать конкретного Пользователя.</p>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="policy-section" id="s3">
+      <h2><span class="section-num">3</span>Передача данных партнёрской программе</h2>
+      <p>Форма обратной связи на Сайте реализована в виде встроенного интерфейса (<strong>iframe</strong>) партнёрской программы. Данные, введённые Пользователем в такую форму, передаются непосредственно на серверы партнёра — оператора партнёрской программы — и обрабатываются им в соответствии с его собственной политикой конфиденциальности.</p>
+      <div class="highlight-box">
+        <strong>Важно:</strong> данные, переданные через форму-iframe, хранятся и обрабатываются на стороне партнёра, а не на серверах данного Сайта. Оператор не несёт ответственности за действия партнёра с этими данными. Рекомендуем ознакомиться с политикой конфиденциальности соответствующей партнёрской организации до отправки заявки.
+      </div>
+      <p>Оператор не передаёт персональные данные Пользователей третьим лицам в иных случаях, за исключением:</p>
+      <ul>
+        <li>наличия явного согласия Пользователя на такую передачу;</li>
+        <li>случаев, прямо предусмотренных законодательством Российской Федерации (в том числе по запросу уполномоченных государственных органов).</li>
+      </ul>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="policy-section" id="s4">
+      <h2><span class="section-num">4</span>Цели обработки персональных данных</h2>
+      <p>Персональные данные, собранные через Сайт, используются исключительно в следующих целях:</p>
+      <ul>
+        <li>Связь с Пользователем для предоставления запрошенной консультации об аппарате «Союз-Аполлон» — его характеристиках, показаниях, порядке применения;</li>
+        <li>Ответ на вопросы Пользователя об условиях приобретения медицинского изделия и получения подробной информации;</li>
+        <li>Улучшение качества информационного наполнения и функциональности Сайта на основе обезличенной аналитики;</li>
+        <li>Соблюдение требований законодательства Российской Федерации.</li>
+      </ul>
+      <p>Персональные данные не используются в целях автоматизированного принятия решений, профилирования или рекламы.</p>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="policy-section" id="s5">
+      <h2><span class="section-num">5</span>Правовые основания обработки</h2>
+      <p>Обработка персональных данных осуществляется на следующих правовых основаниях:</p>
+      <ul>
+        <li><strong>Согласие субъекта персональных данных</strong> — оставляя заявку на Сайте, Пользователь даёт согласие на обработку персональных данных в соответствии с п. 1 ч. 1 ст. 6 Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных»;</li>
+        <li><strong>Выполнение договора</strong> — в части обработки данных, необходимой для исполнения обязательств перед Пользователем (предоставления запрошенной консультации);</li>
+        <li><strong>Законные интересы Оператора</strong> — в части обезличенной аналитики функционирования Сайта.</li>
+      </ul>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="policy-section" id="s6">
+      <h2><span class="section-num">6</span>Сроки хранения данных</h2>
+      <p>Персональные данные, переданные Пользователем через форму обратной связи, хранятся в течение срока, необходимого для достижения цели их обработки, но не дольше:</p>
+      <ul>
+        <li>3 (трёх) лет с момента последнего взаимодействия с Пользователем — для данных, переданных в целях консультации;</li>
+        <li>до истечения сроков, установленных действующим законодательством РФ — для данных, хранение которых обязательно в силу закона.</li>
+      </ul>
+      <p>По истечении указанных сроков персональные данные уничтожаются или обезличиваются, если иное не предусмотрено законодательством.</p>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="policy-section" id="s7">
+      <h2><span class="section-num">7</span>Права пользователя</h2>
+      <p>В соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных» Пользователь вправе:</p>
+      <ul>
+        <li>Получить информацию о факте и содержании обработки своих персональных данных;</li>
+        <li>Потребовать уточнения, блокировки или уничтожения своих персональных данных, если они являются неполными, устаревшими, неточными, незаконно полученными или не являются необходимыми для заявленной цели обработки;</li>
+        <li>Отозвать согласие на обработку персональных данных — после отзыва согласия Оператор прекращает обработку данных, если иное не предусмотрено законодательством;</li>
+        <li>Обжаловать действия или бездействие Оператора в уполномоченном органе по защите прав субъектов персональных данных (Роскомнадзор) или в судебном порядке;</li>
+        <li>Осуществлять иные права, предусмотренные действующим законодательством РФ.</li>
+      </ul>
+      <p>Для реализации указанных прав обратитесь к Оператору по контактным данным, указанным в разделе 12 настоящей Политики. В случае если ваши данные были переданы через форму-iframe партнёра, для реализации прав необходимо также обратиться к соответствующей партнёрской организации.</p>
+    </section>
+
+    <!-- Section 8 -->
+    <section class="policy-section" id="s8">
+      <h2><span class="section-num">8</span>Файлы cookie</h2>
+      <p>Сайт может использовать <strong>файлы cookie</strong> — небольшие текстовые файлы, размещаемые на устройстве Пользователя браузером. Cookie применяются в следующих целях:</p>
+      <ul>
+        <li><strong>Технические cookie</strong> — обеспечение корректного функционирования Сайта (сохранение пользовательских настроек, навигация);</li>
+        <li><strong>Аналитические cookie</strong> — сбор обезличенной статистики посещаемости для улучшения Сайта (например, Яндекс.Метрика).</li>
+      </ul>
+      <p>Пользователь вправе отключить файлы cookie в настройках своего браузера. Обратите внимание, что отключение некоторых видов cookie может повлиять на работу отдельных функций Сайта.</p>
+      <p>Продолжая использовать Сайт без изменения настроек cookie, Пользователь соглашается на их использование.</p>
+    </section>
+
+    <!-- Section 9 -->
+    <section class="policy-section" id="s9">
+      <h2><span class="section-num">9</span>Безопасность данных</h2>
+      <p>Оператор принимает необходимые правовые, организационные и технические меры для защиты персональных данных Пользователей от несанкционированного или случайного доступа, уничтожения, изменения, блокирования, копирования, распространения, а также от иных неправомерных действий третьих лиц.</p>
+      <p>К таким мерам, в частности, относятся:</p>
+      <ul>
+        <li>использование защищённого соединения (HTTPS/TLS) для передачи данных;</li>
+        <li>ограничение доступа к персональным данным по принципу минимально необходимых привилегий;</li>
+        <li>периодическая проверка систем обработки данных на предмет соответствия требованиям безопасности.</li>
+      </ul>
+      <p>Несмотря на принимаемые меры, Оператор не может гарантировать абсолютную защиту данных от всех возможных угроз. Пользователь самостоятельно несёт ответственность за сохранность своих данных для входа на иные ресурсы.</p>
+    </section>
+
+    <!-- Section 10 -->
+    <section class="policy-section" id="s10">
+      <h2><span class="section-num">10</span>Изменения политики</h2>
+      <p>Оператор оставляет за собой право вносить изменения в настоящую Политику в одностороннем порядке. Изменения вступают в силу с момента их публикации на данной странице Сайта.</p>
+      <p>Актуальная версия Политики всегда доступна по адресу: <a href="https://soyuz-apollon-info.ru/privacy.html">soyuz-apollon-info.ru/privacy.html</a></p>
+      <p>Продолжение использования Сайта после внесения изменений означает согласие Пользователя с обновлённой редакцией Политики. Рекомендуем периодически проверять данную страницу на наличие изменений.</p>
+    </section>
+
+    <!-- Section 11 -->
+    <section class="policy-section" id="s11">
+      <h2><span class="section-num">11</span>Применимое законодательство</h2>
+      <p>Настоящая Политика разработана и применяется в соответствии с законодательством Российской Федерации, в том числе:</p>
+      <ul>
+        <li>Федеральный закон от 27.07.2006 № 152-ФЗ «О персональных данных»;</li>
+        <li>Постановление Правительства РФ от 01.11.2012 № 1119 «Об утверждении требований к защите персональных данных при их обработке в информационных системах персональных данных»;</li>
+        <li>Приказ ФСТЭК России от 18.02.2013 № 21 «Об утверждении состава и содержания организационных и технических мер по обеспечению безопасности персональных данных»;</li>
+        <li>иные нормативные правовые акты в сфере персональных данных и информационной безопасности.</li>
+      </ul>
+      <p>Все споры, возникающие в связи с настоящей Политикой, подлежат разрешению в соответствии с законодательством РФ.</p>
+    </section>
+
+    <!-- Section 12 -->
+    <section class="policy-section" id="s12">
+      <h2><span class="section-num">12</span>Контактная информация</h2>
+      <p>По всем вопросам, связанным с обработкой персональных данных, а также для реализации своих прав субъекта персональных данных, обращайтесь к Оператору:</p>
+
+      <div class="contact-card">
+        <h3>Дистрибьютор / Оператор персональных данных</h3>
+        <div class="contact-row">
+          <span class="contact-label">Наименование</span>
+          <span class="contact-value">«Международный центр здоровья»</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">ИНН / КПП</span>
+          <span class="contact-value">7713480994 / 771301001</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">ОГРН</span>
+          <span class="contact-value">1217700093159</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Адрес</span>
+          <span class="contact-value">127287, г. Москва, Петровско-Разумовский проезд, д. 29 стр. 4, эт. 1, пом. I, ком. 28</span>
+        </div>
+      </div>
+
+      <div class="contact-card" style="margin-top:16px;">
+        <h3>Производитель медицинского изделия</h3>
+        <div class="contact-row">
+          <span class="contact-label">Наименование</span>
+          <span class="contact-value">ООО НПК «Вестерн»</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Адрес</span>
+          <span class="contact-value">390000, г. Рязань, ул. Солнечная, д. 4Б</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Телефон</span>
+          <span class="contact-value"><a href="tel:+74912307776">+7 (4912) 30-77-76</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">E-mail</span>
+          <span class="contact-value"><a href="mailto:ooo.western@yandex.ru">ooo.western@yandex.ru</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Сайт</span>
+          <span class="contact-value"><a href="https://western62.ru" target="_blank" rel="noopener">western62.ru</a></span>
+        </div>
+      </div>
+
+      <p style="margin-top:20px;font-size:.84rem;">Мы постараемся ответить на ваш запрос в срок не более 30 (тридцати) дней с момента его получения, если иные сроки не установлены применимым законодательством.</p>
+    </section>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>Аппарат «Союз-Аполлон»</strong> — медицинское изделие класса 2а. РУ № ФСР 2012/13220 от 19.03.2012 г.</p>
+    <p style="margin-top:8px;">© 2024–2025 Информационный сайт. <a href="index.html">Вернуться на главную</a></p>
+    <p style="margin-top:6px;font-size:.76rem;opacity:.6;">Имеются противопоказания. Перед применением обязательна консультация врача.</p>
+  </div>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTop" aria-label="Наверх">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+  // Scroll to top button
+  var scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+  scrollBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
